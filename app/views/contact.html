@@ -1,0 +1,32 @@
+<div class="row ">
+  <div class="contact-form">
+    <div class="form-group col-sm-6 "  >
+       <form name="contact" ng-submit="submit(contact)" action="">
+            <label for="name" >Name:</label>
+            <input ng-model="name"  type="name" class="form-control" placeholder="Enter your name">
+        
+            <label for="email" >Email:</label>
+            <input ng-model="email" type="email" class="form-control" placeholder="example@email.com">
+            
+            
+            <input class="btn btn-success contact-button" type="submit" id="submit" value="Submit" />
+       </form>
+        
+    </div>
+    <div  class="col-sm-6">
+      
+      
+      <h2>List of Contacts</h2>
+      <div ng-repeat= " contact in listOfContacts" class="panel panel-info">
+        <div class="panel-heading ">Name: {{contact.name}}</div>
+        <div class="panel-body">
+          Email: {{contact.email}}
+        </div>
+      </div>
+
+        
+    </div>  
+  </div>
+  
+</div>
+

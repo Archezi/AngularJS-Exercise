@@ -1,0 +1,49 @@
+<div >
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Movie Title      </th>
+                <th>Year</th>
+                <th>IMDBRating</th>
+                <th>Plot</th>
+            </tr>
+            <tr>
+                <th><input ng-model="movie.title" type="text" class="form-control"> </th>
+                <th><input ng-model="movie.year" type="text" class="form-control"> </th>
+                <th><input ng-model="movie.IMDBRating" type="text" class="form-control"> </th>
+                <th><input ng-model="movie.plot" type="text" class="form-control"> </th>
+                <th>
+                    <button ng-click="addMovie()" class="btn btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </th>
+                <th>
+                    <button ng-click="updateMovie()" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="movie in movies" >
+            <tr>
+                <td>{{movie.title}}</td>
+                <td>{{movie.year}}</td>
+                <td>{{movie.IMDBRating}}</td>
+                <td>{{movie.plot}}</td>
+                <td>
+                    <button ng-click="removeMovie(movie)" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+
+                </td>
+                <td>
+                    <button ng-click="selectMovie(movie)" class="btn btn-warning">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

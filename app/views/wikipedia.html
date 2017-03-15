@@ -1,0 +1,19 @@
+<div class="page-header">
+	<h1>Wikipedia Search controller <small>Lukasz Kaczmarek DiD 2year</small></h1>
+</div>
+
+<div class="input-group">
+    <input type="text" ng-model="searchTerm" class="form-control" placeholder="Search for...">
+    <span class="input-group-btn">
+    <button class="btn btn-default" ng-click="searchWiki()" type="button">Search</button>
+    </span>
+</div><!-- /input-group -->
+
+<div>
+	<span ng-repeat="info in searchTermArr[0]" >
+		<a ng-href="{{ searchTermArr[2][$index] }}">
+			<h3>{{$index + 1}} {{info}}</h1>
+			<p>{{ searchTermArr[1][$index] }}</p>
+		</a>
+	</span>
+</div>

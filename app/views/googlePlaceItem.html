@@ -1,0 +1,9 @@
+<div id="map"></div>
+<div>
+	<li ng-repeat= "place in places">
+		<p>{{place.name}}</p>
+		<img ng-src="{{ place.photos[0].getUrl({'maxWidth': 175, 'maxHeight': 175}) }} "
+		ui-sref='googlePlace({aID: place.place_id})'
+		>
+	</li>	
+</div>

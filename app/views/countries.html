@@ -1,0 +1,41 @@
+<div class="row">
+            <div class="col-sm-8 center-block">
+                <h1>{{countries.length}} Countries GDP Ranking</h1>
+                <br>
+
+                <div class="input-group">
+                    <span class="input-group-addon">Search:</span>
+                    <input ng-model="searchFild" type="text" class="form-control" placeholder="What are you looking for ? ">
+                </div>
+
+                <br>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr >
+                                <th><a href="" ng-click="sortField = 'Number' ;  reverse = !reverse "  >Number</a></th>
+                                <th><a href="" ng-click="sortField = 'COUNTRY';  reverse = !reverse "  >Country Name</a></th>
+                                <th><a href="" ng-click="sortField = 'AMOUNT' ;  reverse = !reverse "  >GDP Amount</a></th>
+                                <th><a href="" ng-click="sortField = 'DATE'   ;  reverse = !reverse "  >Date</a></th>
+                            <!--
+                                <th ng-repeat="country in [
+                                      'Number' , 'Country' , 'GDP Amount' , 'Date' ]">
+                                {{country}}
+                                </th> 
+                            -->
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="country in countries | filter:searchFild | orderBy:sortFild:reverse  ">
+                                <td class="text-center">{{country.Number}}</td>
+                                <td>{{country.COUNTRY}}</td>
+                                <td>{{country.AMOUNT }}</td>
+                                <td>{{country.DATE}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
